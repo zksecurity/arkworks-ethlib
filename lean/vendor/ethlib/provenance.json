@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/ethereum/EthLib",
+  "revision": "1717cf83b132e9f2ffe3a0e5625c98b750ef88af",
+  "namespace": "EthLib.Cryptography",
+  "files": {
+    "EthLib/Cryptography/Bls/Errors.lean": "09c7a9407654eed9bbb73c997bb106836d1ecaa6a2f0ce328d1d96d883a57bee",
+    "EthLib/Cryptography/Bls/Fp.lean": "fae4da1d0532a1dfb1f04b2b5a97a35d1daca6b8305c988fc860a1174bbaec21",
+    "EthLib/Cryptography/Bls/Fp2.lean": "c3edbe7b57b7a5403055e9f10cf7a7e2e2411182f2a6f82eed4b3cf7e2571189",
+    "EthLib/Cryptography/Bls/Fr.lean": "468afa822bd46069193084d8a01f0757948b5ba251c361d2d5bb71b57698cd22",
+    "EthLib/Cryptography/Bls/G1.lean": "08d8f51c5510aa0e2479e6332cf3bef65a0b3059cf66dd80d384a25b162967f3",
+    "EthLib/Cryptography/Bls/G2.lean": "0c9e59cf88bbd424bebd503a7cc4d34864cd35b1eded9fee97a52c4a6ccb183d",
+    "EthLib/Cryptography/Bls/Fp6.lean": "13403167605fc92868042d58cd299fc56e4ac134fbc02069662da1e6c7806de0",
+    "EthLib/Cryptography/Bls/Fp12.lean": "b437f05bd508624d8e66a49b0c1fc8102bd8916fb51544568606e7aa6f11b64c",
+    "EthLib/Cryptography/Bls/Pairing.lean": "afa6141aada1974f1faec003be2333e9832702e5a45d6b893cf5dc5f12e268e6",
+    "EthLib/Cryptography/Hash/Sha256.lean": "96f6fc094009878b9868aa6d17590e3c202e59ce7d4b83c28840b958d2535732",
+    "EthLib/Cryptography/Bls/Compress.lean": "266aca168cb700e00ec4a80b0dfa193110417613ac262725ad5e688e4e1ed210"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "sources": [
+    {
+      "directory": "zkcrypto",
+      "repository": "https://github.com/zkcrypto/bls12_381",
+      "revision": "5d22dd74c2a14fb9f3d3b85ae2c39d0c669ddd99",
+      "files": {
+        "g1_compressed_valid_test_vectors.dat": {
+          "upstream_path": "src/tests/g1_compressed_valid_test_vectors.dat",
+          "sha256": "8acaa1d512b4cf96f4740e4c9afc19ba4618d48fe251c452a19382395bcd0929"
+        },
+        "mod.rs": {
+          "upstream_path": "src/tests/mod.rs",
+          "sha256": "a99e797fa52c0a9141a7bfd7cbc587f7a6e55136633cb3ac8122eb6eb79f3241"
+        },
+        "LICENSE-MIT": {
+          "upstream_path": "LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        },
+        "LICENSE-APACHE": {
+          "upstream_path": "LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        }
+      }
+    },
+    {
+      "directory": "ethereum",
+      "repository": "https://github.com/ethereum/bls12-381-tests",
+      "revision": "89ff3a86f1a9b89a555495f7535c853cda589320",
+      "files": {
+        "deserialization_G1.md": {
+          "upstream_path": "formats/deserialization_G1.md",
+          "sha256": "f10ce2b6f2ab38d5192f975252dffe0c9864c616e57feef25d568d79ac480cb6"
+        },
+        "LICENSE": {
+          "upstream_path": "LICENSE",
+          "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+        },
+        "deserialization_fails_infinity_with_false_b_flag.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_infinity_with_false_b_flag.json",
+          "sha256": "4f370805b31cef0fd2e32b7957f9ca45b04e6f7b3a848e66e5c141108529f737"
+        },
+        "deserialization_fails_infinity_with_true_b_flag.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_infinity_with_true_b_flag.json",
+          "sha256": "52e16d37f8712463fe33e1fdab7348b75bf9f2b8226dd7a3efb23d6ee8317e95"
+        },
+        "deserialization_fails_not_in_G1.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_not_in_G1.json",
+          "sha256": "342a52c85f94c6de967242502bec60a1bad20e8617453db78e34164f66857607"
+        },
+        "deserialization_fails_not_in_curve.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_not_in_curve.json",
+          "sha256": "38e05a91c2279d1421cae8f7c85b60506c6a0ccafde2c66a4a5c991451cef1d0"
+        },
+        "deserialization_fails_too_few_bytes.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_too_few_bytes.json",
+          "sha256": "0637bc43aa6796c344bc408c8535f55c08113508403de51212db8797ff00401c"
+        },
+        "deserialization_fails_too_many_bytes.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_too_many_bytes.json",
+          "sha256": "45173bd2c81ce35e3d6a4f19566b4bf264d6fdbd80f5152730c3d2005749df41"
+        },
+        "deserialization_fails_with_b_flag_and_a_flag_true.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_with_b_flag_and_a_flag_true.json",
+          "sha256": "6151af6cfd8e9d3506f2b5782b97cd88cdbb07cbd7f46bedd25db17ef716adaa"
+        },
+        "deserialization_fails_with_b_flag_and_x_nonzero.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_with_b_flag_and_x_nonzero.json",
+          "sha256": "80ad78f08e430e5087bd3e8d66779d7400ac1eb407ef04eac5b39564153000b1"
+        },
+        "deserialization_fails_with_wrong_c_flag.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_with_wrong_c_flag.json",
+          "sha256": "2e05e442bd845a80f25fe77d9ee96130d24b8df7f7fd764b7142c0d43ba7343f"
+        },
+        "deserialization_fails_x_equal_to_modulus.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_x_equal_to_modulus.json",
+          "sha256": "becb6cd9a66708f791f7e2a8c0562819c9b6e9b2e2519d5cc50251e23248fdd3"
+        },
+        "deserialization_fails_x_greater_than_modulus.json": {
+          "archive_path": "./deserialization_G1/deserialization_fails_x_greater_than_modulus.json",
+          "sha256": "afc23807023f97c7742b73cd81a3bb529a3c92a385801d2885c1de8525e167ce"
+        },
+        "deserialization_succeeds_correct_point.json": {
+          "archive_path": "./deserialization_G1/deserialization_succeeds_correct_point.json",
+          "sha256": "bb488460b420125c9401b7aef19b5d241ce16b833acea790b74ea3bf4a1c6c80"
+        },
+        "deserialization_succeeds_infinity_with_true_b_flag.json": {
+          "archive_path": "./deserialization_G1/deserialization_succeeds_infinity_with_true_b_flag.json",
+          "sha256": "e1588f732eab672ef6bcf3837dc88e34b49693fae20db33801539707536492b9"
+        }
+      },
+      "release": "v0.1.2",
+      "archive_url": "https://github.com/ethereum/bls12-381-tests/releases/download/v0.1.2/bls_tests_json.tar.gz",
+      "archive_sha256": "0dc1dfabfa7b3e0f8e8029f9cb2bb8733597526fa085b18f160d2c4eb0b448bc"
+    },
+    {
+      "directory": "rfc9380",
+      "repository": "https://www.rfc-editor.org/rfc/rfc9380",
+      "revision": "RFC 9380, August 2023",
+      "sections": [
+        "J.9.1",
+        "J.9.2"
+      ],
+      "scope": "Published G1 coordinates only; no hash-to-curve implementation is tested",
+      "files": {
+        "rfc9380.txt": {
+          "upstream_url": "https://www.rfc-editor.org/rfc/rfc9380.txt",
+          "sha256": "a2e6ab02b2117d6f52ac293020857752972b2e23ae005c33f612e40436ff4b6d"
+        },
+        "g1-points.tsv": {
+          "derived_from": "rfc9380.txt, sections J.9.1 and J.9.2; checked by scripts/rfc9380_vectors.py",
+          "sha256": "36087c64943f4f0918ab227a08a0aac57fc35cfbf1f1548583c047378a2cdd45"
+        }
+      }
+    },
+    {
+      "directory": "eip2537",
+      "repository": "https://github.com/ethereum/EIPs",
+      "revision": "46976b2a9bf99f727fb87dc8c809e3a3cdc6b445",
+      "files": {
+        "mul_G1_bls.json": {
+          "upstream_path": "assets/eip-2537/mul_G1_bls.json",
+          "sha256": "86014a86e1b5404c99ce24ec2adb6c60e7d28b02eea25bb6526ab57033bd4fdb"
+        },
+        "pairing_check_bls.json": {
+          "upstream_path": "assets/eip-2537/pairing_check_bls.json",
+          "sha256": "23c8ac73c4ff6c0f5078ac09298b301ea3fa051b59be1406f19145b3722f69b1"
+        },
+        "LICENSE.md": {
+          "upstream_path": "LICENSE.md",
+          "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "aeneas_revision": "ab34bd28458a08c150b7cbf1873e59af74588138",
+  "charon_revision": "7b462d9159db2ed3015162352183906a30bfafc6",
+  "charon_version": "0.1.304",
+  "rust_toolchain": "nightly-2026-09-17",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "ocaml_version": "5.3.0"
+}

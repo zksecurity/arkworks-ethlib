@@ -1,0 +1,13 @@
+.cache/
+.tools/
+build/
+rust/target/
+minimal/target/
+curve/target/
+curve/*.olean*
+curve/*.ilean
+curve/*.ir
+lean/.lake/
+lean/Generated/
+verification/
+__pycache__/

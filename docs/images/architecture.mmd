@@ -1,0 +1,18 @@
+flowchart TD
+    Rust["Minimal Rust reference implementation<br/>curve/ and minimal/"]
+    Arkworks["Arkworks 0.5.0<br/>independent implementation"]
+    EthLib["Pinned EthLib Lean definitions<br/>vendored unchanged"]
+    Model["Generated Lean model"]
+    Refinement["Kernel-checked refinement proofs<br/>termination and matching results"]
+    Comparisons["Executable cross-checks<br/>Rust, arkworks, and EthLib"]
+    Vectors["Published vectors<br/>RFC 9380, EIP-2537, zkcrypto, Ethereum"]
+    VectorProofs["2,069 kernel-checked vector statements"]
+
+    Rust -->|Charon + Aeneas extraction| Model
+    Model -->|implementation| Refinement
+    EthLib -->|specification| Refinement
+    Rust -.-> Comparisons
+    Arkworks -.-> Comparisons
+    EthLib -.-> Comparisons
+    Vectors -->|literal published expectations| VectorProofs
+    EthLib -->|actual Lean functions| VectorProofs

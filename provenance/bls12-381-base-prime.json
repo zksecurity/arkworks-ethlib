@@ -1,0 +1,770 @@
+{
+  "method": "Lucas primality criterion with recursively certified prime factors",
+  "discovery": "PARI/GP factor(n-1) and lift(znprimroot(n)); discovery output is untrusted",
+  "verification": "All proof obligations are rendered as ordinary kernel-checked Lean proofs",
+  "modulus": "4002409555221667393417789825735904156556882819939007885332058136124031650490837864442687629129015664037894272559787",
+  "nodes": [
+    {
+      "n": "1087",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "181",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "1151",
+      "witness": 17,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "5",
+          "exponent": 2
+        },
+        {
+          "prime": "23",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "1327",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "13",
+          "exponent": 1
+        },
+        {
+          "prime": "17",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "1453",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "11",
+          "exponent": 2
+        }
+      ]
+    },
+    {
+      "n": "2741",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "5",
+          "exponent": 1
+        },
+        {
+          "prime": "137",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "3373",
+      "witness": 5,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "281",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "4349",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "1087",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "7577",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 3
+        },
+        {
+          "prime": "947",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "8101",
+      "witness": 6,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "3",
+          "exponent": 4
+        },
+        {
+          "prime": "5",
+          "exponent": 2
+        }
+      ]
+    },
+    {
+      "n": "10177",
+      "witness": 7,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 6
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "53",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "16447",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "2741",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "43591",
+      "witness": 11,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "5",
+          "exponent": 1
+        },
+        {
+          "prime": "1453",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "47737",
+      "witness": 5,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 3
+        },
+        {
+          "prime": "3",
+          "exponent": 3
+        },
+        {
+          "prime": "13",
+          "exponent": 1
+        },
+        {
+          "prime": "17",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "421987",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "53",
+          "exponent": 1
+        },
+        {
+          "prime": "1327",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "582767",
+      "witness": 5,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "67",
+          "exponent": 1
+        },
+        {
+          "prime": "4349",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "609743",
+      "witness": 5,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "7",
+          "exponent": 1
+        },
+        {
+          "prime": "97",
+          "exponent": 1
+        },
+        {
+          "prime": "449",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "755057",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 4
+        },
+        {
+          "prime": "41",
+          "exponent": 1
+        },
+        {
+          "prime": "1151",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "859267",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 2
+        },
+        {
+          "prime": "47737",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "1686913",
+      "witness": 10,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 7
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "23",
+          "exponent": 1
+        },
+        {
+          "prime": "191",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "51376543",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "7",
+          "exponent": 1
+        },
+        {
+          "prime": "151",
+          "exponent": 1
+        },
+        {
+          "prime": "8101",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "52437899",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "43",
+          "exponent": 1
+        },
+        {
+          "prime": "609743",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "475709467",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "47",
+          "exponent": 1
+        },
+        {
+          "prime": "1686913",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "927093389",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "13",
+          "exponent": 1
+        },
+        {
+          "prime": "409",
+          "exponent": 1
+        },
+        {
+          "prime": "43591",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "13090036741",
+      "witness": 10,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "5",
+          "exponent": 1
+        },
+        {
+          "prime": "11",
+          "exponent": 1
+        },
+        {
+          "prime": "47",
+          "exponent": 1
+        },
+        {
+          "prime": "421987",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "43670061551",
+      "witness": 7,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "5",
+          "exponent": 2
+        },
+        {
+          "prime": "17",
+          "exponent": 1
+        },
+        {
+          "prime": "51376543",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "9272813673901",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "5",
+          "exponent": 2
+        },
+        {
+          "prime": "7",
+          "exponent": 1
+        },
+        {
+          "prime": "7577",
+          "exponent": 1
+        },
+        {
+          "prime": "582767",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "64881703735777",
+      "witness": 5,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 5
+        },
+        {
+          "prime": "3",
+          "exponent": 7
+        },
+        {
+          "prime": "927093389",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "1928745244171409",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 4
+        },
+        {
+          "prime": "13",
+          "exponent": 1
+        },
+        {
+          "prime": "9272813673901",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "7259797099061183477",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "941",
+          "exponent": 1
+        },
+        {
+          "prime": "1928745244171409",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "2584487767265781317813",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "89",
+          "exponent": 1
+        },
+        {
+          "prime": "7259797099061183477",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "3819663927398918131021",
+      "witness": 6,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 2
+        },
+        {
+          "prime": "3",
+          "exponent": 2
+        },
+        {
+          "prime": "5",
+          "exponent": 1
+        },
+        {
+          "prime": "19",
+          "exponent": 1
+        },
+        {
+          "prime": "113",
+          "exponent": 1
+        },
+        {
+          "prime": "755057",
+          "exponent": 1
+        },
+        {
+          "prime": "13090036741",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "92691255082156974996979",
+      "witness": 3,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "31",
+          "exponent": 1
+        },
+        {
+          "prime": "467",
+          "exponent": 1
+        },
+        {
+          "prime": "16447",
+          "exponent": 1
+        },
+        {
+          "prime": "64881703735777",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "1125266252156850182658904441386709967",
+      "witness": 5,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3373",
+          "exponent": 1
+        },
+        {
+          "prime": "43670061551",
+          "exponent": 1
+        },
+        {
+          "prime": "3819663927398918131021",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "15778400344354997994418419698270088123916926905054652752758194827714659",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 1
+        },
+        {
+          "prime": "53",
+          "exponent": 1
+        },
+        {
+          "prime": "475709467",
+          "exponent": 1
+        },
+        {
+          "prime": "92691255082156974996979",
+          "exponent": 1
+        },
+        {
+          "prime": "1125266252156850182658904441386709967",
+          "exponent": 1
+        }
+      ]
+    },
+    {
+      "n": "4002409555221667393417789825735904156556882819939007885332058136124031650490837864442687629129015664037894272559787",
+      "witness": 2,
+      "factors": [
+        {
+          "prime": "2",
+          "exponent": 1
+        },
+        {
+          "prime": "3",
+          "exponent": 2
+        },
+        {
+          "prime": "11",
+          "exponent": 1
+        },
+        {
+          "prime": "23",
+          "exponent": 1
+        },
+        {
+          "prime": "47",
+          "exponent": 1
+        },
+        {
+          "prime": "10177",
+          "exponent": 1
+        },
+        {
+          "prime": "859267",
+          "exponent": 1
+        },
+        {
+          "prime": "52437899",
+          "exponent": 1
+        },
+        {
+          "prime": "2584487767265781317813",
+          "exponent": 1
+        },
+        {
+          "prime": "15778400344354997994418419698270088123916926905054652752758194827714659",
+          "exponent": 1
+        }
+      ]
+    }
+  ]
+}

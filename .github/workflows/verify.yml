@@ -1,0 +1,114 @@
+name: Verify
+on:
+  push:
+    paths-ignore: ['**/*.md', 'docs/images/**', 'LICENSE']
+  pull_request:
+    paths-ignore: ['**/*.md', 'docs/images/**', 'LICENSE']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      PYTHON: python3.11
+      OPAMJOBS: '2'
+      CARGO_BUILD_JOBS: '2'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - name: Free unused runner SDK space
+        run: |
+          # Free space before restoring the large compiled toolchain cache.
+          # These SDKs are unused by this job; only the disposable CI runner is affected.
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+          df -h /
+      - name: Restore pinned extraction toolchain
+        id: tools
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          key: ${{ runner.os }}-${{ runner.arch }}-ubuntu24-extraction-v1-${{ hashFiles('toolchain.json', 'scripts/install-tools.sh') }}
+          path: |
+            .tools/aeneas/.git
+            .tools/aeneas/charon-pin
+            .tools/aeneas/bin
+            .tools/aeneas/charon/.git
+            .tools/aeneas/charon/bin
+            .tools/aeneas/backends/lean
+            ~/.rustup/toolchains/nightly-2026-09-17-x86_64-unknown-linux-gnu
+            ~/.elan/toolchains/leanprover--lean4---v4.35.0
+      - name: Install system prerequisites
+        if: steps.tools.outputs.cache-hit != 'true'
+        run: |
+          # The runner's Azure mirror was downloading at 89 kB/s in the failed run.
+          sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|https://archive.ubuntu.com/ubuntu|g' /etc/apt/apt-mirrors.txt
+          sudo apt-get -o Acquire::Retries=3 update
+          sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends build-essential opam pkg-config libgmp-dev libffi-dev bubblewrap unzip zstd
+      - name: Install Rust and Lean toolchains
+        run: |
+          if ! command -v rustup >/dev/null; then
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+          fi
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+          curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore Cargo downloads and incremental builds
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          key: ${{ runner.os }}-${{ runner.arch }}-ubuntu24-cargo-v1-${{ hashFiles('rust/Cargo.lock', 'toolchain.json') }}
+          path: |
+            ~/.cargo/registry
+            .cache/cargo
+            rust/target
+      - name: Fetch locked Rust dependencies
+        run: cargo fetch --locked --manifest-path rust/Cargo.toml
+      - name: Build pinned extraction tools
+        if: steps.tools.outputs.cache-hit != 'true'
+        run: make install-tools
+      # Save immediately: a later project proof failure must not discard a cold build.
+      - name: Save pinned extraction toolchain
+        if: steps.tools.outputs.cache-hit != 'true'
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          key: ${{ steps.tools.outputs.cache-primary-key }}
+          path: |
+            .tools/aeneas/.git
+            .tools/aeneas/charon-pin
+            .tools/aeneas/bin
+            .tools/aeneas/charon/.git
+            .tools/aeneas/charon/bin
+            .tools/aeneas/backends/lean
+            ~/.rustup/toolchains/nightly-2026-09-17-x86_64-unknown-linux-gnu
+            ~/.elan/toolchains/leanprover--lean4---v4.35.0
+      - name: Validate restored tools with fresh extraction
+        if: steps.tools.outputs.cache-hit == 'true'
+        run: |
+          python3.11 scripts/extract.py --check
+          make smoke-tools
+      - name: Check concrete and formatter refinement proofs
+        run: make verify-curve verify-minimal
+      - name: Compare arkworks intermediate computations
+        run: make compare-intermediates
+      - name: Check published vectors and codec comparisons
+        run: make test
+      - name: Check Rust arithmetic, subgroup, and formatter tests
+        run: |
+          python3.11 scripts/offline_cargo.py test --release --config profile.release.overflow-checks=true --tests
+          python3.11 scripts/offline_cargo.py build --release --bin curve_codec
+          python3.11 scripts/curve_differential.py
+      - name: Upload reports and proof logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: verification-reports
+          path: |
+            build/*.json
+            build/*.log
+            build/vector-proof-*/*.log
+          if-no-files-found: warn
